@@ -1,0 +1,15 @@
+{
+  "name": "petdog-racoes-cloudflare",
+  "private": true,
+  "version": "3.0.0",
+  "type": "module",
+  "description": "PetDog Rações – site público + painel administrativo (Cloudflare Pages + Pages Functions + D1)",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:panel": "node scripts/build-panel.mjs",
+    "db:local": "wrangler d1 execute petdog --local --file=migrations/0001_init.sql",
+    "dev": "wrangler pages dev public --d1=DB",
+    "test": "node tests/run-tests.mjs"
+  },
+  "devDependencies": { "wrangler": "^4" }
+}
